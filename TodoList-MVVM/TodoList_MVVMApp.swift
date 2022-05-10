@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
+import Firebase
 @main
 struct TodoList_MVVMApp: App {
     @StateObject var listViewModel: ListViewModel = ListViewModel()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -17,5 +18,14 @@ struct TodoList_MVVMApp: App {
             }
             .environmentObject(listViewModel)
         }
+    }
+}
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        return true
     }
 }
