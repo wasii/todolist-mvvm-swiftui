@@ -8,5 +8,7 @@ target 'TodoList-MVVM' do
   # Pods for TodoList-MVVM
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
+pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 
 end
